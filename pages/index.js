@@ -4,7 +4,7 @@ import Link from "next/link";
 import routes from "../routes";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import { LayoutGuest } from "../src/components/Layout";
-import { WalletCard } from "../src/components/Accounts";
+import { ModalFundWallet, WalletCard } from "../src/components/Wallet";
 
 export default function Home() {
   return (
