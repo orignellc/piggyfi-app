@@ -1,10 +1,9 @@
-import { Button, Input } from "antd";
-
-import Link from "next/link";
-import routes from "../routes";
-import { PlusCircleOutlined } from "@ant-design/icons";
 import { LayoutGuest } from "../src/components/Layout";
-import { ModalFundWallet, WalletCard } from "../src/components/Wallet";
+import {
+  ModalFundWallet,
+  toggleModalFundWallet,
+  WalletCard,
+} from "../src/components/Wallet";
 
 export default function Home() {
   return (
@@ -22,7 +21,7 @@ export default function Home() {
             wallet={{
               name: "Funding Wallet",
               amount: "$0.00",
-              action: { text: "Fund", handler() {} },
+              action: { text: "Fund", handler: toggleModalFundWallet },
             }}
           />
         </div>
@@ -33,7 +32,7 @@ export default function Home() {
             wallet={{
               name: "Savings Wallet",
               amount: "$0.00",
-              action: { text: "Add", handler() {} },
+              action: { text: "Add", handler: toggleModalFundWallet },
             }}
           />
         </div>

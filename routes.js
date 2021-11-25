@@ -3,4 +3,9 @@ export default {
   accounts: {
     login: "/login",
   },
+  transactions: {
+    orders: {
+      review: (id) => `/transactions/orders/${id}/review`,
+    },
+  },
 };

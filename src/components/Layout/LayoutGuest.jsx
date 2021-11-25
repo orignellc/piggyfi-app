@@ -69,10 +69,8 @@ export const LayoutGuest = ({
       </Head>
 
       <div className="h-screen flex justify-center sm:items-center">
-        <div className="max-w-xl w-full relative">
-          <div className="px-8 py-8 bg-gray-dark bg-opacity-70 relative">
-            {children}
-          </div>
+        <div className="max-w-xl bg-gray-dark w-full relative">
+          <div className="px-8 py-8 bg-opacity-70 relative">{children}</div>
           <ModalFundWallet />
         </div>
       </div>
