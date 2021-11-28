@@ -9,7 +9,6 @@ import {
 } from "@ant-design/icons";
 import { useState } from "react";
 import { Stars } from "../Icons";
-import Paragraph from "antd/es/typography/Paragraph";
 
 let show, setShow;
 let showGuide, setShowGuide;

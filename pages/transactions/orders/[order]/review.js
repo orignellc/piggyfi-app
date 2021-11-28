@@ -1,14 +1,25 @@
-import { Stars } from "../../../../src/components/Icons";
+import { LayoutGuest, Stars } from "../../../../src/components";
 import Paragraph from "antd/es/typography/Paragraph";
 import { Button } from "antd";
 import Link from "next/link";
 import routes from "../../../../routes";
+import { ArrowLeftOutlined } from "@ant-design/icons";
+import { useRouter } from "next/router";
 
 export default function OrderReview() {
+  const router = useRouter();
+
   return (
-    <div className="absolute w-full h-full top-0 bg-gray-dark">
-      <div className="w-full rounded-md px-8 py-8 text-base">
-        <h3 className="text-center font-semibold text-xl ml-4 ">Pay amount</h3>
+    <LayoutGuest>
+      <div className="w-full px-8 py-8 text-base bg-gray-dark">
+        <div className="grid grid-cols-3">
+          <div className="">
+            <ArrowLeftOutlined onClick={() => router.back()} />
+          </div>
+          <h3 className="text-center font-semibold text-xl ml-4 ">
+            Pay amount
+          </h3>
+        </div>
 
         <div className="">
           <p className="mb-8 text-center">
@@ -89,14 +100,19 @@ export default function OrderReview() {
           </div>
         </div>
 
-        <div className="text-center">
-          <Link href={routes.transactions.orders.review("12432134")}>
-            <Button type="primary" size="large">
-              I Understand
+        <div className="text-center flex">
+          {/*<Link href={routes.transactions.orders.review("12432134")}>*/}
+          <Button type="default" size="large" className="w-full mr-2">
+            Cancel
+          </Button>
+          {/*</Link>*/}
+          <Link href={routes.transactions.orders.payment("12432134")}>
+            <Button type="primary" size="large" className="w-full ml-2">
+              Proceed
             </Button>
           </Link>
         </div>
       </div>
-    </div>
+    </LayoutGuest>
   );
 }

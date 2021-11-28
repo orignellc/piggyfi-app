@@ -1,9 +1,8 @@
-import { LayoutGuest } from "../src/components/Layout";
 import {
-  ModalFundWallet,
-  toggleModalFundWallet,
+  LayoutGuest,
   WalletCard,
-} from "../src/components/Wallet";
+  toggleModalFundWallet,
+} from "../src/components";
 
 export default function Home() {
   return (
